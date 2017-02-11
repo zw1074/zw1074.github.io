@@ -1,0 +1,273 @@
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003 David J. Granft <dgrant@ieee.org> http://www.davidgrant.ca
+% (c) 2007 Todd C. Miller <Todd.Miller@courtesan.com> http://www.courtesan.com/todd
+% (c) 2009-2012 Derek R. Hildreth <derek@derekhildreth.com> http://www.derekhildreth.com
+%This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/1.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
+
+% GENERAL NOTE:  There may be some notes specific to myself.  If you're only interested in my LaTeX source or it doesn't make sense, please disregard it.
+
+\documentclass[a4paper,11pt]{article}
+
+
+%-----------------------------------------------------------
+\usepackage{ifsym}
+\usepackage{marvosym}
+%\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{indentfirst}
+%\usepackage[pdftex]{hyperref}
+\usepackage{hyperref}
+\usepackage{xcolor}
+%\usepackage{fancyhdr}
+%\pagestyle{empty} 
+%\usepackage{geometry}
+%\geometry{left=0.5cm,right=0.5cm,top=0.5cm,bottom=0.5cm}
+\hypersetup{
+	colorlinks,%
+	citecolor=black,%
+	filecolor=black,%
+	linkcolor=black,%
+	urlcolor=blue     % can put red here to better visualize the links
+}
+\urlstyle{same}
+\definecolor{mygrey}{gray}{.85}
+\definecolor{mygreylink}{gray}{.20}
+\textheight=9.0in
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{0.375in}
+\addtolength{\textwidth}{0.5in}
+
+\addtolength{\textheight}{6cm}
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\renewcommand{\normalsize}{\fontsize{12pt}{\baselineskip}\selectfont}
+\newcommand{\resheading}[1]{{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+\newcommand{\ressubheading}[4]{
+	\begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+	\end{tabular*}\vspace{-6pt}}
+%-----------------------------------------------------------
+
+%-----------------------------------------------------------
+%General Resume Tips
+%   No periods!  Technically, nothing in this document is a full sentence.
+%   Use parallelism by ending key words with the same thing,  i.e. "Coordinated; Designed; Communicated".
+%   More tips on bottom of this LaTeX document.f
+%-----------------------------------------------------------
+\topmargin=-70pt
+\headsep=10	pt
+\textwidth=520pt
+
+\begin{document}
+	\footnotesize
+	\newcommand{\mywebheader}{
+		\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+			\textbf{\LARGE Zihao Wang} & Mail:\href{mailto:zw1074@nyu.edu}{zw1074@nyu.edu}\\
+			{\footnotesize \texttt{204 10th St, Apt 314, Jersey City, New Jersey, 07302}
+			}
+			& Phone: 551-(225)-9955
+			%& or \href{mailto:b111110046@smail.nju.edu.cn}{b111110046@smail.nju.edu.cn}
+		\end{tabular*}
+		\\
+		\vspace{0.1in}}
+	
+	% CHANGE HEADER SOURCE HERE
+	\mywebheader
+	
+	%%%%%%%%%%%%%%%%%%%%%%
+	\resheading{Summary}
+	%	\begin{description}
+	%\setlength{\parindent}{0em} 
+	I am currently a candidate for Master of Science in Data Science, prior to which I had a Bachelor's degree in computational mathematics. To solve some huge PDE, I learned parallel programming by myself. Now, I am interested in CUDA C++, torch7 and deep learning. As for me, I am a quick learner and hard worker. 
+	%\setlength{\parindent}{0em}
+	\resheading{Education}
+	%	{\normalsize \textbf{New York University (CIMS)}} {\hfill New York, USA}
+	\begin{itemize}
+		\item
+		\ressubheading{{\normalsize New York University (CIMS) }}{New York, USA}{\normalsize Master of Data Science}{Sep. 2015 - Now}
+		\begin{itemize}
+			\item {\bfseries Expected graduation day}: Jun. 2017
+			\item {\bfseries GPA}: 3.8/4.0
+			\item {\bfseries Relevant Courses}\\
+			{\footnotesize
+				Machine Learning, Deep Learning, Statistical Learning, Nature Language Processing, Inference and Graph Model, Time Theory, Logic
+			}
+		\end{itemize}
+		\item
+		\ressubheading{{\normalsize Nanjing University}}{Nanjing, China}{{\normalsize Bachelor of Science, Computational Mathematics}}{Sep. 2011--Jun. 2015}
+		\begin{itemize}
+			\item {\bfseries GPA}: \textcolor{black}{3.5}/4.0
+			%         \begin{tabular*}{rrr}
+			%          & Major & Overall\\
+			%		2011.9-2012.8& 1 & 1 \\
+			%        2012.9-2013.8& 2 & 1\\
+			%        2013.8-2014.2& 1 & 1
+			%        \end{tabular*}\vspace{-6pt}}
+			%-----------------------------------------------------------
+			\item {\bfseries Relevant Courses}\\
+			{ \footnotesize
+				Advanced Linear Algebra, Discrete mathematics, Numerical methods \& experiments, Operations research, Mathematical modeling, Foundation of information theory, Numerical methods for PDEs, Foundations of Probability Theory, Stochastic processing, Foundation of Mathematical Statistics, Parallel Programming
+			}
+		\end{itemize}
+	\end{itemize}
+	% End Education list
+	
+	%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%
+	
+	\resheading{Experience}\\
+	\begin{itemize}
+		\item \ressubheading{\normalsize Research Assistant Intern}{AIG Inc, NYC USA}{\normalsize Science Group}{Aug. 2016 - Dec. 2016}
+		\begin{itemize}
+			\resitem{Contribute to the whole automatic damage appraisal project, especially for license plate detection and heat map generation of damage part.}
+			%		\resitem{Currently modifying the class activation mapping model, try to get the attend from location instead of getting the activation from different feature maps. Current the accuracy of model in Front Bumper is 96\%.}
+		\end{itemize}
+	\end{itemize}
+	
+	\resheading{Projects}\\
+	%	\begin{description}
+	\begin{itemize}
+		%	\item \ressubheading{{Apply Streamline-Diffusion Method to Burgers Equation}(undergraduate thesis)}{Nanjing University, CN}{\footnotesize Supervised by \href{http://math.nju.edu.cn/~qzh/}{Prof. Qiang Zhang}}{Sept. 2015-Present}
+		%	{\footnotesize
+		%		\begin{itemize}
+		%			\resitem{Add crosswind item to decrease the impact of crosswind when applying streamline-diffusion method to Burgers equation}
+		%		\end{itemize}}
+		
+		\item \ressubheading{{\normalsize Class Activation Map Improvement
+			}}{AIG Inc, USA}{\normalsize Teamwork: response for designing and implement}{Oct. 2016}
+			
+			\begin{itemize}
+				\resitem{Class activation map is the response heat map of class. It reflects which part of image the model focus on for getting the class. The current problem is that we need to add average pooling layer on the top of the model instead of fully connected layer to get the weight of each feature map. And also we want a more precise heat map.}
+				\resitem{I solve this restriction by using gradient method. For each class, calculate the correspond gradient of it and thus calculate the weight from the gradient. This method is called guided class activation map.}
+				\resitem{I implement this method on both tensorflow and theano platform and also modify some details for fitting our situation. I also design some experiments for testing its performance which shows that it works better than previous method on the same model.}
+			\end{itemize}
+			
+			\item \ressubheading{{\normalsize License Plate Detection}}{AIG Inc, USA}{\normalsize Teamwork: response for designing and implement}{Aug. 2016}
+			
+			\begin{itemize}
+				\resitem{Detect the license plate from a car image. There are two challenges. One is the image is quiet hard such as low resolution or high color contrast. The other one is that it requires fast processing.}
+				\resitem{To solve the question of hard image, I train a character-based classification. It only contains two layers of convolution neural net for reducing processing time. The training set is the combination of the global character training set and the background of the car image. With translation and rescaling, the classification can handle many hard situations.}
+				\resitem{To generate the candidate of the license plate from the saliency map generated from classification process, I use dilation to connect the nearby element and delete some members by its size and shape. Finally the top-5 error is 15\% and top-3 error is 20\%.}
+			\end{itemize}
+			
+				\item \ressubheading{{\normalsize Efficient auto-encoder for physics particle collision event}}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{Aug. 2016}
+				
+				\begin{itemize}
+					\resitem{Use collision event data from CERN to produce an auto-encoder to compress data. The data is 3-D tensor while the index represent the location of the energy detector and the value represent the energy. The challenge is that this noisy data has 14400 dimension and we need to preserve the most relevant part and thus reduce the noise. The compress ratio is 32:14400.}
+					\resitem{Compare three compressors: Multilayer perceptron auto-encoder, convolutional auto-encoder and PCA. We evaluate them by two ways. One is calculating the reconstruction error and the other is apply reconstructed data in real application to see its performance.}
+					\resitem{Add threshold RELU on the last layer to make the output sparse. We find that multilayer perceptron is the best auto-encoder because it has over 0.95 AUC score between the reconstruction data and the original data. Also unlike PCA, it does not focus on the biggest value but indeed extract the hidden factor via our training process.}
+				\end{itemize}
+			\newpage
+			\item \ressubheading{\normalsize Duplication Detection}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{May. 2016}
+			
+			\begin{itemize}
+				\resitem{Use the data from health care system to predict possible duplication of information. The challenge is that the whole pair set is around $ 10^{11} $, which is time consuming if we build the model on it. And it is also not a balanced dataset because in ground truth we only have around 120,000 pairs.}
+				\resitem{Construct an efficient parallel method to get a smaller set of interesting pairs, which we think that they are duplication. The processing time is 10 minutes using 8 workers on CPU. After this process, we reduce the pair set from $ 10^{11} $ to $ 3700k $. Then we generate a balanced training set by randomly select same number negative pairs (pairs that are not duplication) as the positive pairs (pairs that are duplication). Then we use a feature extractor to generate feature vector for each pair. Finally use random forest to make the prediction.}
+				\resitem{The smaller set of interesting pairs includes over 95\% ground truth. And we finally get 99.4\% accuracy with our fine tunning classifier.} 
+			\end{itemize}
+			%	\newpage
+			\item \ressubheading{{\normalsize Effective classification of STL-10}}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{Mar. 2016}
+			
+			\begin{itemize}
+				\resitem{STL-10 is a famous image processing database for testing semi-supervised learning containing 4000 training data, 1000 validation data, 8000 testing data and 100000 unlabeled data for 10 different class. The challenge of this dataset is that the training dataset is not enough for training compared to testing data.}
+				\resitem{We find a good initial kernel for first four CNN layers by applying k-means clustering to unlabeled data, which makes our accuracy improved to 76\%.} 
+				\resitem{We generate extra training data by applying some augmentation technology such as scaling, translation for balancing the size of training data and testing data. We find that when we augment twice for each training data, it performs best and finally get 78\% accuracy.}
+			\end{itemize}
+			
+				\item \ressubheading{{\normalsize Yelp Restaurant Rating Prediction}}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{Dec. 2015}
+				
+					\begin{itemize}
+						\resitem{Use the data from Yelp Dateset Challenge to fit different models. The challenge of this dataset is that the business attribute of the restaurant is not enough for well prediction so that combining the review as the additional feature is necessary.}
+						\resitem{Create a new model by tagging words of each review as adjective then apply Google pre-trained word2vec model which can improve the accuracy by 50\%. Also evaluate the model by using AUC of the micro-ROC curve, which is equal to the probability that the confident score of true sample is higher than the score of false sample. For our model, the AUC/probability is 0.86.}
+					\end{itemize}
+			
+			
+			
+			
+				\item \ressubheading{\normalsize Efficient Algorithm for Solving Tridiagonal Matrix}{Personal, CN}{\normalsize Personal: response for code and idea}{Mar. 2014}
+				\begin{itemize}
+					\resitem{Convert the traditional tridiagonal problem to a recursive problem. Then using prefix algorithms finish the calculation.}
+					\resitem{The theoretical running time should be $ O(\log n) $. In practice, it spends about 2s on GTX 970 when size is $ 2^{24} $, and for compared to traditional LU　decomposition algorithm, it spends over hours on MATLAB.} 
+				\end{itemize}
+			%\item \textit{A scattering theory of a nonlinear coupled KdV equations describing interaction of Rossby waves}, in process ( cowork with \href{https://www.math.ucdavis.edu/~biello/}{J.A. Biello}, \href{http://ucdavis.edu/one/stories/athletes/halsted.html}{Trevor Halsted} --see my website for \href{http://yezhengli.wix.com/b111110046}{summary of my work})
+		\end{itemize}
+		
+		\resheading{Skills and Interest}\\
+		%	\begin{description}
+		\begin{itemize}
+			\item \textbf{Programming:} C++/C, SQL, CUDA, Python, Tensorflow, Theano, Torch7, MATLAB, Mathematica, \LaTeX, Spark, Hadoop.
+			\item \textbf{Interest:} Parallel Programming, Theorem and Application in NLP, Adversarial Network, Transfer Learning.
+		\end{itemize}
+		
+		%\resheading{Experience}
+		%	\begin{itemize}
+		%		\item \ressubheading{{Honorable member in committee of elite program }}{Nanjing University, China}{\footnotesize 
+		%		Information announcement, decision making on school activities of elite program
+		%		 }{Jan. 2014-Dec. 2014}
+		%		{
+		%		}
+		%	\item %4
+		%    \ressubheading{{Visiting Student}}{UC Davis, US}{\footnotesize {\bfseries Courses:} 
+		%%     			     			              \href{http://oldwww.math.ucdavis.edu/courses/syllabi/MAT%20116%20Syllabus%20%28Revised%20201301%29.pdf}
+		%{Differential Geometry},\href{https://www.math.ucdavis.edu/~hunter/m205b/m205b.html}{Complex Analysis}$^{\dagger}$, (Functional) \href{http://oldwww.math.ucdavis.edu/courses/syllabi/grad2/mat201c.html}{Analysis}$^{\dagger}$}{Mar. 2014-Aug. 2014}	  
+		%\item %3
+		%\ressubheading{{Visiting Student}}{University of Dayton, US}{\footnotesize Sponsored by Zhenxing Scholarship, Nanjing University}{July 2013}
+		%     			{\footnotesize 
+		%     			\begin{itemize}
+		%%     			\item{}
+		%     			\item{Get adapted to American life and study, improve my English}
+		%     			\end{itemize}
+		%     			}
+		%	\item %2
+		%			\ressubheading{{Subeditor of magazine, College Nature Science}}{Nanjing University, CN}
+		%				{ \footnotesize	Participate in seminars, invite, collect and compile papers}{Mar. 2012 -- Mar. 2013}     			
+		%	\item %2
+		%			\ressubheading{{Organizer of Student Seminars}}{Nanjing University, CN}
+		%				{ \footnotesize				Organize seminars, choose topics and give talks}{Mar. 2012 -- Mar. 2013}
+		%	\item
+		%	\ressubheading{{Head of study committee}}{DPT Math, Nanjing University, CN}{\footnotesize Purchase textbooks for classmates, arrangement of exam rooms, etc.}{Sept. 2011 -- Mar. 2014}
+		%	\item
+		%								\ressubheading{{Summer School}}{Nanjing University, CN}{\footnotesize {\bfseries Courses:} Representation Theory on Compact Lie Groups$^\dagger$,Elliptic Curves$^\dagger$ }{July 2012}
+		%    			   					
+		%	\item %1
+		%				\ressubheading{{Summer School}}{Xiamen University, CN}{\footnotesize {\bfseries Courses:} Numerical Methods, Dynamical Systems$^\dagger$ }{July 2011}
+		%\end{itemize}
+		%\resheading{Awards}
+		%\begin{itemize}
+		%			
+		%            
+		%%            \item \ressubheading{Scholarship Funded by Elite Program of Chinese Ministry of Education}{}{Outstanding Award(Only One in my Dept.)}{2011}
+		%	\item \ressubheading{Elite Program Scholarship}{Nanjing University, CN}{$27^{th}/30$, 500 USD}{Sept.2014}
+		%	\item \ressubheading{People's Scholarship}{Nanjing University, CN}{$7^{th}/45$, 333 USD}{Sept.2014}
+		%	\item \ressubheading{Honorable Mention in Mathematical Contest in Modeling}{MCM, USA}{Honorable Mention}{Mar. 2014}
+		%%	\item \ressubheading{People's Scholarship}{Nanjing University, CN}{Second prize; $7^{th}/45$,333 USD}{Sept.2013}
+		%	\item \ressubheading{Xinming Scholarship}{Nanjing University, CN}{$ 1^{st}/7 $, 333 USD}{Sept.2013}            
+		%%	\item \ressubheading{Successful participation Award of CUMCM}{CUMCM, CN}{Successful participation}{Sept. 2013}
+		%\end{itemize}
+		%\resheading{Research Interests}\\
+		%%	\begin{description}
+		%	Advanced Applied Mathematics including but not limited to \par
+		%	\begin{itemize}
+		%	\item \textit{mathematical physics, scattering theory, numerical solution to PDE}
+		%	\item \textit{machine learning, deep learning, stochastic differential equation}
+		%%\item	\textit{Wave prolongation: conservation laws and shock waves, }\\
+		%%\item	\textit{Mathematical physics, integrable systems and symmetry groups}\\
+		%\item	\textit{compressed sensing, optimization, operational research}
+		%\item \textit{algebraic coding, information theory}
+		%\end{itemize}
+		%End Award
+		% End Experience list
+		
+		%%%%%%%%%%%%%%%%%%%%%%
+	\end{document}
+	
