@@ -136,27 +136,33 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4">
-                    <a href="#projectLCLM" class="portfolio-link" data-toggle="modal">
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#projectAutoencoder" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/lclm1.png" alt="lclm1 graph" class="img-responsive img-rounded">
-                        <img src="img/lclm2.png" alt="lclm2 graph" class="img-responsive img-rounded">
+                        <img src="img/autoencoder1.png" alt="autoencoder1 graph" class="img-responsive img-rounded">
+                        <img src="img/autoencoder2.png" alt="autoencoder2 graph" class="img-responsive img-rounded">
                     </a>
                 </div>
 
                 <div class="col-sm-8">
-                    <h3>Larger-Context Language Model</h3>
+                    <h3>Efficient auto-encoder for physics particle collision event</h3>
                     <p>
-                        Conventional language models only consider dependency within sentence due to computation limitation. However, in real life, context plays an essential row in forming languages. In this project, we propose a novel method to incorporate corpus-level discourse
-                        information into neural language modelling. We call this larger-context language model. By analyzing the trained larger-context language model, we discover that content words, including nouns, adjectives and verbs, benefit most
-                        from an increasing number of context sentences. This analysis suggests that larger-context language model improves the unconditional language model by capturing the theme of a document better and more easily.
+                        Use collision event data from CERN to produce an auto-encoder to compress data. The data is 3-D tensor while the index represent the location of the energy detector and the value represent the energy. The challenge is that this noisy data has 14400 dimension
+                        and we need to preserve the most relevant part and thus reduce the noise. The compress ratio is 32:14400.
                     </p>
                     <p>
-                        This is a joint work with Professor Kyunghyun Cho, who supervised me in the independent study. This work will appear in ACL 2016.
+                        Compare three compressors: Multilayer perceptron auto-encoder, convolutional auto-encoder and PCA. We evaluate them by two ways. One is calculating the reconstruction error and the other is apply reconstructed data in real application to see its performance.
+                    </p>
+                    <p>
+                        Add threshold RELU on the last layer to make the output sparse. We find that multilayer perceptron is the best auto-encoder because it has over 0.95 AUC score between the reconstruction data and the original data. Also unlike PCA, it does not focus on
+                        the biggest value but indeed extract the hidden factor via our training process.
+                    </p>
+                    <p>
+                        This work is part of <a href="http://theoryandpractice.org" style="color:deepskyblue">Kyle Cranmer</a> work, which is presented in <a href="https://nips.cc/Conferences/2016/Schedule?showEvent=6195" style="color:deepskyblue">NIPS 2016</a>.
                     </p>
                 </div>
             </div>
@@ -378,7 +384,7 @@
         </div>
     </div>
 
-    <div class="portfolio-modal modal fade" id="projectLCLM" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="projectAutoencoder" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -390,8 +396,8 @@
                 <div class="row">
                     <div class="col-lg-12 col-lg-offset-2">
                         <div class="modal-body">
-                            <img src="img/lclm1.png" class="img-responsive img-centered" alt="">
-                            <img src="img/lclm2.png" class="img-responsive img-centered" alt="">
+                            <img src="img/autoencoder1.png" class="img-responsive img-centered" alt="">
+                            <img src="img/autoencoder2.png" class="img-responsive img-centered" alt="">
                         </div>
                     </div>
                 </div>
