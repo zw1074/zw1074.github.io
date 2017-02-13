@@ -22,7 +22,7 @@ a:focus,
 a:active,
 a.active {
     outline: none;
-    color: #27C08D;
+    color: darkorange;
 }
 
 h1,
