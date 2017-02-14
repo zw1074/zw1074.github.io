@@ -198,64 +198,83 @@
             <hr>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
-                    <img src="img/race1.png" alt="race1 graph" class="img-responsive img-rounded">
-                </div>
-                <div class="col-sm-8">
-                    <h3>Individual Ethnicity prediction</h3>
-                    <p>
-                        Ethnicity is an important attribute that is valuable for many social scientists. However, due to many issues, it is difficult to get this feature from individual level. In this project, we developed an program to automatically assign ethnicity for individual,
-                        given surname and residence location.
-                        <p>
-                            This is a joint work with Dr. Andreas Mueller, and it was designed to provide race of an individual in stop-and-frisk project carried out by Professor Chris Dawes and Dr. Woo Chang Kang.
-                        </p>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#projectCapstone" class="portfolio-link" data-toggle="modal">
+                    <a href="#projectYelp" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/capstone.png" alt="capstone graph" class="img-responsive img-rounded">
+                        <img src="img/Yelp1.png" alt="yelp1 graph" class="img-responsive img-rounded">
+                        <img src="img/Yelp2.png" alt="yelp2 graph" class="img-responsive img-rounded">
+                        <img src="img/Yelp3.png" alt="yelp3 graph" class="img-responsive img-rounded">
                     </a>
                 </div>
 
                 <div class="col-sm-8">
-                    <h3>The Geographic Strongholds of Candidates in the 2016 Presidential Primary Election</h3>
+                    <h3>Yelp Restaurant Rating Prediction</h3>
                     <p>
-                        Social media has become an integral part of many people’s lives. Sites such as Twitter and Facebook serve as platforms for users to create and share content with their network of friends and followers. Given this explosion of data, it is natural to ask
-                        if we can extract any meaningful insight from social media content. In this project, we analyze ~1000GB Twitter data related to the United States presidential elections. Specifically, we ask the following question: Can we use Twitter
-                        to measure candidate support in each state? Given the low response rates and high cost of traditional polls, social media could potentially offer valuable insight into public sentiment. As steps towards towards answering this question,
-                        we first present evidence that Twitter users are politically engaged and that word usage in Tweets differ between candidates and across states. Next we present our sentiment model and show that it produces sensible results that
-                        agree with polling data.
+                        Use the data from Yelp Dateset Challenge to fit different models. The challenge of this dataset is that the business attribute of the restaurant is not enough for well prediction so that combining the review as the additional feature is necessary.
                     </p>
                     <p>
-                        This is a joint work with Peter Li and Jake Zhao, under the guidance of Professor Pablo Barberá in Capstone Project course.
+                        Create a new model by tagging words of each review as adjective then apply Google pre-trained word2vec model which can improve the accuracy by 50\%. Also evaluate the model by using AUC of the micro-ROC curve, which is equal to the probability that the confident score of true sample is higher than the score of false sample. For our model, the AUC/probability is 0.86.
                     </p>
                 </div>
             </div>
             <hr>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
-                    <img src="img/sjtu.png" alt="capstone graph" class="img-responsive img-rounded">
+                    <a href="#projectSTL10" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/STL10.png" alt="stl10 graph" class="img-responsive img-rounded">
+                    </a>
                 </div>
 
                 <div class="col-sm-8">
-                    <h3>Latent Information Diffusion Network Recovery in Social Network</h3>
+                    <h3>Effective classification of STL-10</h3>
                     <p>
-                        Social media has become an integral part of many people’s lives, and it's interesting to see how information propogates. In this project, we analyzed Sina Weibo data and implemented KernelCascade method to get the information diffusion network for a group
-                        of users.
+                        <a href="https://cs.stanford.edu/~acoates/stl10/" style="color:deepskyblue">STL-10</a> is a famous image processing database for testing semi-supervised learning containing 4000 training data, 1000 validation data, 8000 testing data and 100000 unlabeled data for 10 different class. The challenge of this dataset is that the training dataset is not enough for training compared to testing data.
                     </p>
                     <p>
-                        This is my undergraduate thesis project, advised by Professor Yuan Yao and Professor Weidong Liu.
+                        We find a good initial kernel for first four CNN layers by applying k-means clustering to unlabeled data, which makes our accuracy improved to 76%.
+                    </p>
+                    <p>
+                        We generate extra training data by applying some augmentation technology such as scaling, translation for balancing the size of training data and testing data. We find that when we augment twice for each training data, it performs best and finally get 78% accuracy.
                     </p>
                 </div>
             </div>
-        </div>
-    </section>
+            <hr>
+            <div class="row">
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#projectPDE" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/PDE1.png" alt="PDE1 graph" class="img-responsive img-rounded">
+                        <img src="img/PDE2.png" alt="PDE2 graph" class="img-responsive img-rounded">
+                    </a>
+                </div>
+
+                <div class="col-sm-8">
+                    <h3>Apply Streamline-Diffusion Method to Burgers Equation</h3>
+                    <p>
+                        <a href="https://en.wikipedia.org/wiki/Burgers'_equation" style="color:deepskyblue">Burgers' equation</a> is a fundamental PDE in various area of applied mathematics. It performs very bad when it comes to advection-dominant condition.
+                        I modified some part of Streamline-Diffusion Method to Burgers' equation which can improve the standard finited element method by half order.
+                    </p>
+                    <p>
+                        I proved the stability property of this method and give the upper bound of the speed. Also I carried out some experiments to illustrate the advantage of this new method to Burgers' equation.
+                    </p>
+                    <p>
+                        This is my undergraduate thesis project, advised by Professor <a href="http://maths.nju.edu.cn/~qzh/" style="color:deepskyblue">Zhang Qiang</a>.
+                    </p>
+                </div>
+            </div>    
+        </section>
 
 
     <section class="success" , id="education">
@@ -407,7 +426,7 @@
         </div>
     </div>
 
-    <div class="portfolio-modal modal fade" id="projectCapstone" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="projectYelp" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -419,7 +438,9 @@
                 <div class="row">
                     <div class="col-lg-12 col-lg-offset-2">
                         <div class="modal-body">
-                            <img src="img/capstone.png" class="img-responsive img-centered" alt="">
+                            <img src="img/Yelp1.png" class="img-responsive img-centered" alt="">
+                            <img src="img/Yelp2.png" class="img-responsive img-centered" alt="">
+                            <img src="img/Yelp3.png" class="img-responsive img-centered" alt="">
                         </div>
                     </div>
                 </div>
@@ -427,6 +448,47 @@
         </div>
     </div>
 
+    <div class="portfolio-modal modal fade" id="projectSTL10" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-lg-offset-2">
+                        <div class="modal-body">
+                            <img src="img/STL10.png" class="img-responsive img-centered" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="portfolio-modal modal fade" id="projectPDE" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-lg-offset-2">
+                        <div class="modal-body">
+                            <img src="img/PDE1.png" class="img-responsive img-centered" alt="">
+                            <img src="img/PDE2.png" class="img-responsive img-centered" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
