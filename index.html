@@ -162,6 +162,9 @@
                         the biggest value but indeed extract the hidden factor via our training process.
                     </p>
                     <p>
+                        We use this technique to do anomaly detection. We compare the mean square error between the normal one and the abnormal one. And we find that multilayer perceptron performs best in this case.
+                    </p>
+                    <p>
                         This work is part of <a href="http://theoryandpractice.org" style="color:deepskyblue">Kyle Cranmer</a> work, which is presented in <a href="https://nips.cc/Conferences/2016/Schedule?showEvent=6195" style="color:deepskyblue">NIPS 2016</a>.
                     </p>
                     <p>
@@ -226,7 +229,8 @@
                         Use the data from Yelp Dateset Challenge to fit different models. The challenge of this dataset is that the business attribute of the restaurant is not enough for well prediction so that combining the review as the additional feature is necessary.
                     </p>
                     <p>
-                        Create a new model by tagging words of each review as adjective then apply Google pre-trained word2vec model which can improve the accuracy by 50\%. Also evaluate the model by using AUC of the micro-ROC curve, which is equal to the probability that the confident score of true sample is higher than the score of false sample. For our model, the AUC/probability is 0.86.
+                        Create a new model by tagging words of each review as adjective then apply Google pre-trained word2vec model which can improve the accuracy by 50\%. Also evaluate the model by using AUC of the micro-ROC curve, which is equal to the probability that the
+                        confident score of true sample is higher than the score of false sample. For our model, the AUC/probability is 0.86.
                     </p>
                     <p>
                         <a class="btn btn-primary" href="https://github.com/zw1074/Yelp-Prediction">Github Repository<span
@@ -251,13 +255,15 @@
                 <div class="col-sm-8">
                     <h3>Effective classification of STL-10</h3>
                     <p>
-                        <a href="https://cs.stanford.edu/~acoates/stl10/" style="color:deepskyblue">STL-10</a> is a famous image processing database for testing semi-supervised learning containing 4000 training data, 1000 validation data, 8000 testing data and 100000 unlabeled data for 10 different class. The challenge of this dataset is that the training dataset is not enough for training compared to testing data.
+                        <a href="https://cs.stanford.edu/~acoates/stl10/" style="color:deepskyblue">STL-10</a> is a famous image processing database for testing semi-supervised learning containing 4000 training data, 1000 validation data, 8000 testing
+                        data and 100000 unlabeled data for 10 different class. The challenge of this dataset is that the training dataset is not enough for training compared to testing data.
                     </p>
                     <p>
                         We find a good initial kernel for first four CNN layers by applying k-means clustering to unlabeled data, which makes our accuracy improved to 76%.
                     </p>
                     <p>
-                        We generate extra training data by applying some augmentation technology such as scaling, translation for balancing the size of training data and testing data. We find that when we augment twice for each training data, it performs best and finally get 78% accuracy.
+                        We generate extra training data by applying some augmentation technology such as scaling, translation for balancing the size of training data and testing data. We find that when we augment twice for each training data, it performs best and finally get
+                        78% accuracy.
                     </p>
                     <p>
                         <a class="btn btn-primary" href="https://github.com/zw1074/stl-10_kmeans">Github Repository<span
@@ -293,8 +299,8 @@
                         This is my undergraduate thesis project, advised by Professor <a href="http://maths.nju.edu.cn/~qzh/" style="color:deepskyblue">Zhang Qiang</a>.
                     </p>
                 </div>
-            </div>    
-        </section>
+            </div>
+    </section>
 
 
     <section class="success" , id="education">
@@ -487,7 +493,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="portfolio-modal modal fade" id="projectPDE" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
@@ -508,7 +514,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
