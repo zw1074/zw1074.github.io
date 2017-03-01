@@ -283,6 +283,42 @@
             <hr>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
+                    <a href="#projectBigData" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/BigData2.png" alt="BigData graph" class="img-responsive img-rounded">
+                        <img src="img/BigData.png" alt="BigData2 graph" class="img-responsive img-rounded">
+                    </a>
+                </div>
+
+                <div class="col-sm-8">
+                    <h3>Explore Relationship Between Citi bike and weather</h3>
+                    <p>
+                        We use citi bike data and weather data in 2015 to find the relationship. 
+                    </p>
+                    <p>
+                        I create multiple MapReduce functions to filter or edit dimension of data. Besides only testing the relation between weather and usage, we also added the dimension such as age and gender in order to check if the results would vary for these groups.
+                    </p>
+                    <p>
+                        We use data visualization technique to explore the correlation. We find that temperature has very high correlation and the usage of citi bike is various depending on time, traffic, gender and age groups.
+                    </p>
+                    <p>
+                        <a class="btn btn-primary" href="https://github.com/zw1074/BigDataProject">Github Repository<span
+                            class="glyphicon glyphicon-chevron-right">
+                    </span></a>
+                    <a class="btn btn-primary" href="files/BigDataProjectReport.pdf">Project Report<span
+                            class="glyphicon glyphicon-chevron-right">
+                    </span></a>
+                    </p>
+
+                </div>
+            </div> 
+            <hr>
+            <div class="row">
+                <div class="col-sm-4 portfolio-item">
                     <a href="#projectPDE" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
@@ -298,6 +334,8 @@
                     <h3>Apply Streamline-Diffusion Method to Burgers Equation</h3>
                     <p>
                         <a href="https://en.wikipedia.org/wiki/Burgers'_equation" style="color:deepskyblue">Burgers' equation</a> is a fundamental PDE in various area of applied mathematics. It performs very bad when it comes to advection-dominant condition.
+                    </p>
+                    <p>
                         I modified some part of Streamline-Diffusion Method to Burgers' equation which can improve the standard finited element method by half order.
                     </p>
                     <p>
@@ -306,6 +344,7 @@
                     <p>
                         This is my undergraduate thesis project, advised by Professor <a href="http://maths.nju.edu.cn/~qzh/" style="color:deepskyblue">Zhang Qiang</a>.
                     </p>
+                    
                 </div>
             </div>
     </section>
@@ -516,6 +555,27 @@
                         <div class="modal-body">
                             <img src="img/PDE1.png" class="img-responsive img-centered" alt="">
                             <img src="img/PDE2.png" class="img-responsive img-centered" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal modal fade" id="projectBigData" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-lg-offset-2">
+                        <div class="modal-body">
+                            <img src="img/BigData2.png" class="img-responsive img-centered" alt="">
+                            <img src="img/BigData.png" class="img-responsive img-centered" alt="">
                         </div>
                     </div>
                 </div>

@@ -129,7 +129,9 @@
 	\begin{itemize}
 		\item \ressubheading{\normalsize Research Assistant Intern}{AIG Inc, NYC USA}{\normalsize Science Group}{Aug. 2016 - Dec. 2016}
 		\begin{itemize}
-			\resitem{Contribute to the whole automatic damage appraisal project, especially for license plate detection and heat map generation of damage part.}
+			\resitem{Contribute to the whole automatic car damage appraisal project, especially for license plate detection and heat map generation of damage part.}
+			\resitem{Help to build an end-to-end solution for accelerating license plate detection. Also implement this solution by using python and opencv library.}
+			\resitem{Use a novel method to generate heat map. Design some experiments to test the effect. Help to make the method be compatible with both Windows and Linux system. Also make an end-to-end toolbox for efficiently using this method.}
 			%		\resitem{Currently modifying the class activation mapping model, try to get the attend from location instead of getting the activation from different feature maps. Current the accuracy of model in Front Bumper is 96\%.}
 		\end{itemize}
 	\end{itemize}
@@ -143,22 +145,22 @@
 		%			\resitem{Add crosswind item to decrease the impact of crosswind when applying streamline-diffusion method to Burgers equation}
 		%		\end{itemize}}
 		
-		\item \ressubheading{{\normalsize Class Activation Map Improvement
-			}}{AIG Inc, USA}{\normalsize Teamwork: response for designing and implement}{Oct. 2016}
-			
-			\begin{itemize}
-				\resitem{Class activation map is the response heat map of class. It reflects which part of image the model focus on for getting the class. The current problem is that we need to add average pooling layer on the top of the model instead of fully connected layer to get the weight of each feature map. And also we want a more precise heat map.}
-				\resitem{I solve this restriction by using gradient method. For each class, calculate the correspond gradient of it and thus calculate the weight from the gradient. This method is called guided class activation map.}
-				\resitem{I implement this method on both tensorflow and theano platform and also modify some details for fitting our situation. I also design some experiments for testing its performance which shows that it works better than previous method on the same model.}
-			\end{itemize}
-			
-			\item \ressubheading{{\normalsize License Plate Detection}}{AIG Inc, USA}{\normalsize Teamwork: response for designing and implement}{Aug. 2016}
-			
-			\begin{itemize}
-				\resitem{Detect the license plate from a car image. There are two challenges. One is the image is quiet hard such as low resolution or high color contrast. The other one is that it requires fast processing.}
-				\resitem{To solve the question of hard image, I train a character-based classification. It only contains two layers of convolution neural net for reducing processing time. The training set is the combination of the global character training set and the background of the car image. With translation and rescaling, the classification can handle many hard situations.}
-				\resitem{To generate the candidate of the license plate from the saliency map generated from classification process, I use dilation to connect the nearby element and delete some members by its size and shape. Finally the top-5 error is 15\% and top-3 error is 20\%.}
-			\end{itemize}
+%		\item \ressubheading{{\normalsize Class Activation Map Improvement
+%			}}{AIG Inc, USA}{\normalsize Teamwork: response for designing and implement}{Oct. 2016}
+%			
+%			\begin{itemize}
+%				\resitem{Class activation map is the response heat map of class. It reflects which part of image the model focus on for getting the class. The current problem is that we need to add average pooling layer on the top of the model instead of fully connected layer to get the weight of each feature map. And also we want a more precise heat map.}
+%				\resitem{I solve this restriction by using gradient method. For each class, calculate the correspond gradient of it and thus calculate the weight from the gradient. This method is called guided class activation map.}
+%				\resitem{I implement this method on both tensorflow and theano platform and also modify some details for fitting our situation. I also design some experiments for testing its performance which shows that it works better than previous method on the same model.}
+%			\end{itemize}
+%			
+%			\item \ressubheading{{\normalsize License Plate Detection}}{AIG Inc, USA}{\normalsize Teamwork: response for designing and implement}{Aug. 2016}
+%			
+%			\begin{itemize}
+%				\resitem{Detect the license plate from a car image. There are two challenges. One is the image is quiet hard such as low resolution or high color contrast. The other one is that it requires fast processing.}
+%				\resitem{To solve the question of hard image, I train a character-based classification. It only contains two layers of convolution neural net for reducing processing time. The training set is the combination of the global character training set and the background of the car image. With translation and rescaling, the classification can handle many hard situations.}
+%				\resitem{To generate the candidate of the license plate from the saliency map generated from classification process, I use dilation to connect the nearby element and delete some members by its size and shape. Finally the top-5 error is 15\% and top-3 error is 20\%.}
+%			\end{itemize}
 			
 				\item \ressubheading{{\normalsize Efficient auto-encoder for physics particle collision event}}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{Oct. 2016}
 				
@@ -168,7 +170,6 @@
 					\resitem{Add threshold RELU on the last layer to make the output sparse. We find that multilayer perceptron is the best auto-encoder because it has over 0.95 AUC score between the reconstruction data and the original data. Also unlike PCA, it does not focus on the biggest value but indeed extract the hidden factor via our training process.}
 					\resitem{We use this technique to do anomaly detection. We compare the mean square error between the normal one and the abnormal one. And we find that multilayer perceptron performs best in this case.}
 				\end{itemize}
-			\newpage
 			\item \ressubheading{\normalsize Duplication Detection}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{May. 2016}
 			
 			\begin{itemize}
@@ -176,7 +177,7 @@
 				\resitem{Construct an efficient parallel method to get a smaller set of interesting pairs, which we think that they are duplication. The processing time is 10 minutes using 8 workers on CPU. After this process, we reduce the pair set from $ 10^{11} $ to $ 3700k $. Then we generate a balanced training set by randomly select same number negative pairs (pairs that are not duplication) as the positive pairs (pairs that are duplication). Then we use a feature extractor to generate feature vector for each pair. Finally use random forest to make the prediction.}
 				\resitem{The smaller set of interesting pairs includes over 95\% ground truth. And we finally get 99.4\% accuracy with our fine tunning classifier.} 
 			\end{itemize}
-			%	\newpage
+				\newpage
 			\item \ressubheading{{\normalsize Effective classification of STL-10}}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{Mar. 2016}
 			
 			\begin{itemize}
@@ -192,10 +193,20 @@
 						\resitem{Create a new model by tagging words of each review as adjective then apply Google pre-trained word2vec model which can improve the accuracy by 50\%. Also evaluate the model by using AUC of the micro-ROC curve, which is equal to the probability that the confident score of true sample is higher than the score of false sample. For our model, the AUC/probability is 0.86.}
 					\end{itemize}
 			
+				\item \ressubheading{\normalsize Explore Relationship Between Citi bike and weather}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{Apr. 2016}
+				\begin{itemize}
+					\resitem{Use citi bike data and weather data in 2015 to find the relationship.}
+					\resitem{I create multiple MapReduce functions to filter or edit dimension of data. Besides only testing the relation between weather and usage, we also added the dimension such as age and gender in order to check if the results would vary for these groups.}
+					\resitem{Use data visualization technique to explore the correlation. We find that temperature has very high correlation and the usage of citi bike is various depending on time, traffic, gender and age groups.}
+				\end{itemize}
 			
-			
-			
-				\item \ressubheading{\normalsize Efficient Algorithm for Solving Tridiagonal Matrix}{Personal, CN}{\normalsize Personal: response for code and idea}{Mar. 2014}
+				\item \ressubheading{\normalsize Apply Streamline-Diffusion Method to Burgers Equation}{Nanjing University, CHN}{\normalsize Undergraduate Thesis: response for designing and implement}{May. 2015}
+				\begin{itemize}
+					\resitem{Burgers' equation is a fundamental PDE in various area of applied mathematics. It performs very bad when it comes to advection-dominant condition.}
+					\resitem{I modified some part of Streamline-Diffusion Method to Burgers' equation which can improve the standard finited element method by half order.}
+					\resitem{I proved the stability property of this method and give the upper bound of the speed. Also I carried out some experiments to illustrate the advantage of this new method to Burgers' equation.}
+				\end{itemize}
+				\item \ressubheading{\normalsize Efficient Algorithm for Solving Tridiagonal Matrix}{Personal, CN}{\normalsize Personal: response for designing and implement}{Mar. 2014}
 				\begin{itemize}
 					\resitem{Convert the traditional tridiagonal problem to a recursive problem. Then using prefix algorithms finish the calculation.}
 					\resitem{The theoretical running time should be $ O(\log n) $. In practice, it spends about 2s on GTX 970 when size is $ 2^{24} $, and for compared to traditional LU　decomposition algorithm, it spends over hours on MATLAB.} 
@@ -206,8 +217,12 @@
 		\resheading{Skills and Interest}\\
 		%	\begin{description}
 		\begin{itemize}
-			\item \textbf{Programming:} C++/C, SQL, CUDA, Python, Tensorflow, Theano, Torch7, MATLAB, Mathematica, \LaTeX, Spark, Hadoop.
-			\item \textbf{Interest:} Parallel Programming, Theorem and Application in NLP, Adversarial Network, Transfer Learning.
+			\item \textbf{Programming Language:} C++/C, Python, Lua, Scheme, Mathematica
+			\item \textbf{Deep Learning Platform:} Tensorflow, Theano, Torch7, MATLAB.
+			\item \textbf{Mathematic Tool:} MATLAB, Mathematica.
+			\item \textbf{Big Data Technique:} Hadoop, Spark.
+			\item \textbf{Parallel Programming:} CUDA C++/C.
+			\item \textbf{Interest:} Parallel Programming, Theorem and Application in NLP, Generative Adversarial Network, Transfer Learning.
 		\end{itemize}
 		
 		%\resheading{Experience}
