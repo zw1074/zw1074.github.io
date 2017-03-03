@@ -6,7 +6,7 @@
 
 % GENERAL NOTE:  There may be some notes specific to myself.  If you're only interested in my LaTeX source or it doesn't make sense, please disregard it.
 
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 
 %-----------------------------------------------------------
@@ -85,10 +85,6 @@
 	\mywebheader
 	
 	%%%%%%%%%%%%%%%%%%%%%%
-	\resheading{Summary}
-	%	\begin{description}
-	%\setlength{\parindent}{0em} 
-	I am currently a candidate for Master of Science in Data Science, prior to which I had a Bachelor's degree in computational mathematics. To solve some huge PDE, I learned parallel programming by myself. Now, I am interested in CUDA C++, torch7 and deep learning. As for me, I am a quick learner and hard worker. 
 	%\setlength{\parindent}{0em}
 	\resheading{Education}
 	%	{\normalsize \textbf{New York University (CIMS)}} {\hfill New York, USA}
@@ -114,10 +110,10 @@
 			%        2013.8-2014.2& 1 & 1
 			%        \end{tabular*}\vspace{-6pt}}
 			%-----------------------------------------------------------
-			\item {\bfseries Relevant Courses}\\
-			{ \footnotesize
-				Advanced Linear Algebra, Discrete mathematics, Numerical methods \& experiments, Operations research, Mathematical modeling, Foundation of information theory, Numerical methods for PDEs, Foundations of Probability Theory, Stochastic processing, Foundation of Mathematical Statistics, Parallel Programming
-			}
+%			\item {\bfseries Relevant Courses}\\
+%			{ \footnotesize
+%				Advanced Linear Algebra, Discrete mathematics, Numerical methods \& experiments, Operations research, Mathematical modeling, Foundation of information theory, Numerical methods for PDEs, Foundations of Probability Theory, Stochastic processing, Foundation of Mathematical Statistics, Parallel Programming
+%			}
 		\end{itemize}
 	\end{itemize}
 	% End Education list
@@ -184,21 +180,20 @@
 				\resitem{Construct an efficient parallel method to get a smaller set of interesting pairs, which we think that they are duplication. The processing time is 10 minutes using 8 workers on CPU. After this process, we reduce the pair set from $ 10^{11} $ to $ 3700k $. Then we generate a balanced training set by randomly select same number negative pairs (pairs that are not duplication) as the positive pairs (pairs that are duplication). Then we use a feature extractor to generate feature vector for each pair. Finally use random forest to make the prediction.}
 				\resitem{The smaller set of interesting pairs includes over 95\% ground truth. And we finally get 99.4\% accuracy with our fine tunning classifier.} 
 			\end{itemize}
-				\newpage
-				
-				\item \ressubheading{\normalsize Explore Relationship Between Citi bike and weather}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{May. 2016}
-				\begin{itemize}
-					\resitem{Use citi bike data and weather data in 2015 to find the relationship.}
-					\resitem{I create multiple MapReduce functions to filter or edit dimension of data. Besides only testing the relation between weather and usage, we also added the dimension such as age and gender in order to check if the results would vary for these groups.}
-					\resitem{Use data visualization technique to explore the correlation. We find that temperature has very high correlation and the usage of citi bike is various depending on time, traffic, gender and age groups.}
-				\end{itemize}
-			\item \ressubheading{{\normalsize Effective classification of STL-10}}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{Mar. 2016}
-			
-			\begin{itemize}
-				\resitem{STL-10 is a famous image processing database for testing semi-supervised learning containing 4000 training data, 1000 validation data, 8000 testing data and 100000 unlabeled data for 10 different class. The challenge of this dataset is that the training dataset is not enough for training compared to testing data.}
-				\resitem{We find a good initial kernel for first four CNN layers by applying k-means clustering to unlabeled data, which makes our accuracy improved to 76\%.} 
-				\resitem{We generate extra training data by applying some augmentation technology such as scaling, translation for balancing the size of training data and testing data. We find that when we augment twice for each training data, it performs best and finally get 78\% accuracy.}
-			\end{itemize}
+		\item \ressubheading{\normalsize Explore Relationship Between Citi bike and weather}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{May. 2016}
+		\begin{itemize}
+			\resitem{Use citi bike data and weather data in 2015 to find the relationship.}
+			\resitem{I create multiple MapReduce functions to filter or edit dimension of data. Besides only testing the relation between weather and usage, we also added the dimension such as age and gender in order to check if the results would vary for these groups.}
+			\resitem{Use data visualization technique to explore the correlation. We find that temperature has very high correlation and the usage of citi bike is various depending on time, traffic, gender and age groups.}
+		\end{itemize}
+%				\newpage
+%			\item \ressubheading{{\normalsize Effective classification of STL-10}}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{Mar. 2016}
+%			
+%			\begin{itemize}
+%				\resitem{STL-10 is a famous image processing database for testing semi-supervised learning containing 4000 training data, 1000 validation data, 8000 testing data and 100000 unlabeled data for 10 different class. The challenge of this dataset is that the training dataset is not enough for training compared to testing data.}
+%				\resitem{We find a good initial kernel for first four CNN layers by applying k-means clustering to unlabeled data, which makes our accuracy improved to 76\%.} 
+%				\resitem{We generate extra training data by applying some augmentation technology such as scaling, translation for balancing the size of training data and testing data. We find that when we augment twice for each training data, it performs best and finally get 78\% accuracy.}
+%			\end{itemize}
 			
 				\item \ressubheading{{\normalsize Yelp Restaurant Rating Prediction}}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{Dec. 2015}
 				
@@ -207,31 +202,23 @@
 						\resitem{Create a new model by tagging words of each review as adjective then apply Google pre-trained word2vec model which can improve the accuracy by 50\%. Also evaluate the model by using AUC of the micro-ROC curve, which is equal to the probability that the confident score of true sample is higher than the score of false sample. For our model, the AUC/probability is 0.86.}
 					\end{itemize}
 			
-				\item \ressubheading{\normalsize Apply Streamline-Diffusion Method to Burgers Equation}{Nanjing University, CHN}{\normalsize Undergraduate Thesis: response for designing and implement}{May. 2015}
-				\begin{itemize}
-					\resitem{Burgers' equation is a fundamental PDE in various area of applied mathematics. It performs very bad when it comes to advection-dominant condition.}
-					\resitem{I modified some part of Streamline-Diffusion Method to Burgers' equation which can improve the standard finited element method by half order.}
-					\resitem{I proved the stability property of this method and give the upper bound of the speed. Also I carried out some experiments to illustrate the advantage of this new method to Burgers' equation.}
-				\end{itemize}
-				\item \ressubheading{\normalsize Efficient Algorithm for Solving Tridiagonal Matrix}{Personal, CN}{\normalsize Personal: response for designing and implement}{Mar. 2014}
-				\begin{itemize}
-					\resitem{Convert the traditional tridiagonal problem to a recursive problem. Then using prefix algorithms finish the calculation.}
-					\resitem{The theoretical running time should be $ O(\log n) $. In practice, it spends about 2s on GTX 970 when size is $ 2^{24} $, and for compared to traditional LU　decomposition algorithm, it spends over hours on MATLAB.} 
-				\end{itemize}
+
+			
+%				\item \ressubheading{\normalsize Apply Streamline-Diffusion Method to Burgers Equation}{Nanjing University, CHN}{\normalsize Undergraduate Thesis: response for designing and implement}{May. 2015}
+%				\begin{itemize}
+%					\resitem{Burgers' equation is a fundamental PDE in various area of applied mathematics. It performs very bad when it comes to advection-dominant condition.}
+%					\resitem{I modified some part of Streamline-Diffusion Method to Burgers' equation which can improve the standard finited element method by half order.}
+%					\resitem{I proved the stability property of this method and give the upper bound of the speed. Also I carried out some experiments to illustrate the advantage of this new method to Burgers' equation.}
+%				\end{itemize}
+%				\item \ressubheading{\normalsize Efficient Algorithm for Solving Tridiagonal Matrix}{Personal, CN}{\normalsize Personal: response for designing and implement}{Mar. 2014}
+%				\begin{itemize}
+%					\resitem{Convert the traditional tridiagonal problem to a recursive problem. Then using prefix algorithms finish the calculation.}
+%					\resitem{The theoretical running time should be $ O(\log n) $. In practice, it spends about 2s on GTX 970 when size is $ 2^{24} $, and for compared to traditional LU　decomposition algorithm, it spends over hours on MATLAB.} 
+%				\end{itemize}
 			%\item \textit{A scattering theory of a nonlinear coupled KdV equations describing interaction of Rossby waves}, in process ( cowork with \href{https://www.math.ucdavis.edu/~biello/}{J.A. Biello}, \href{http://ucdavis.edu/one/stories/athletes/halsted.html}{Trevor Halsted} --see my website for \href{http://yezhengli.wix.com/b111110046}{summary of my work})
 		\end{itemize}
 		
-%		\resheading{Skills and Interest}\\
-%		%	\begin{description}
-%		\begin{itemize}
-%			\item \textbf{Programming Language:} C++/C, Python, Lua, Scheme, Mathematica
-%			\item \textbf{Deep Learning Platform:} Tensorflow, Theano, Torch7, MATLAB.
-%			\item \textbf{Mathematic Tool:} MATLAB, Mathematica.
-%			\item \textbf{Big Data Technique:} Hadoop, Spark.
-%			\item \textbf{Parallel Programming:} CUDA C++/C.
-%			\item \textbf{Database:} SQL.
-%			\item \textbf{Interest:} Parallel Programming, Theorem and Application in NLP, Generative Adversarial Network, Transfer Learning.
-%		\end{itemize}
+		
 		
 		%\resheading{Experience}
 		%	\begin{itemize}
