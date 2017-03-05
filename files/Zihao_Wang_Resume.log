@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.11.3)  2 MAR 2017 20:39
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.11.3)  4 MAR 2017 17:26
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -290,21 +290,21 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 93.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 123--123
+Overfull \hbox (6.0pt too wide) in paragraph at lines 122--122
 [][][][][][][]  
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 131--131
+Overfull \hbox (6.0pt too wide) in paragraph at lines 130--130
 [][][][][][][]  
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 142--142
+Overfull \hbox (6.0pt too wide) in paragraph at lines 141--141
 [][][][][][][]  
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 283.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 282.
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 
@@ -312,16 +312,16 @@ File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 [1
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 283.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 282.
  (./Zihao_Wang_Resume.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 283.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 283.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 283.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 282.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 282.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 282.
  ) 
 Here is how much of TeX's memory you used:
  9137 strings out of 493638
  126249 string characters out of 6146796
- 197334 words of memory out of 5000000
+ 196334 words of memory out of 5000000
  12502 multiletter control sequences out of 15000+600000
  8526 words of font info for 30 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
