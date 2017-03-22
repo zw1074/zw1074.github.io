@@ -124,7 +124,7 @@
 	\begin{itemize}
 		\item \textbf{Programming Language:} C++/C, Python, Lua, Scheme, Mathematica, MATLAB
 		\item \textbf{Technique:} Tensorflow, Theano, Torch7, CUDA C++/C, Hadoop, SQL
-		\item \textbf{Interest:} Parallel Programming, Theorem and Application in NLP, Generative Adversarial Network, Transfer Learning.
+		\item \textbf{Interest:} Parallel Programming, Machine Learning, Deep Learning, Natural Language Processing, Computer Vision.
 	\end{itemize}
 	
 	\resheading{Experience}\\
@@ -132,8 +132,8 @@
 		\item \ressubheading{\normalsize Research Assistant (Deep Learning)}{AIG Inc, NYC USA}{\normalsize Science Team}{Aug. 2016 - Dec. 2016}
 		\begin{itemize}
 			\resitem{Contribute to the whole automatic car damage appraisal project, especially for license plate detection and heat map generation of damage part.}
-			\resitem{Help to build an end-to-end solution for accelerating license plate detection. Also implement this solution by using python and opencv library.}
-			\resitem{Use a novel method to generate heat map. Design some experiments to test the effect. Help to make the method be compatible with both Windows and Linux system. Also make an end-to-end toolbox for efficiently using this method.}
+			\resitem{Help to build an end-to-end solution for accelerating license plate detection. Also implement this solution by using Theano and OpenCV library.}
+			\resitem{Use a novel method to generate heat map. Design some experiments to test the effect. Help to make the method be compatible with both Windows and Linux system by using Theano and Tensorflow. Also make an end-to-end toolbox for efficiently using this method.}
 			%		\resitem{Currently modifying the class activation mapping model, try to get the attend from location instead of getting the activation from different feature maps. Current the accuracy of model in Front Bumper is 96\%.}
 		\end{itemize}
 	\end{itemize}
@@ -167,23 +167,24 @@
 				\item \ressubheading{{\normalsize Efficient auto-encoder for physics particle collision event}}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{Oct. 2016}
 				
 				\begin{itemize}
-					\resitem{Use collision event data from CERN to produce an auto-encoder to compress data. The data is 3-D tensor while the index represent the location of the energy detector and the value represent the energy. The challenge is that this noisy data has 14400 dimension and we need to preserve the most relevant part and thus reduce the noise. The compress ratio is 32:14400.}
-					\resitem{Compare three compressors: Multilayer perceptron auto-encoder, convolutional auto-encoder and PCA. We evaluate them by two ways. One is calculating the reconstruction error and the other is apply reconstructed data in real application to see its performance.}
-					\resitem{Add threshold RELU on the last layer to make the output sparse. We find that multilayer perceptron is the best auto-encoder because it has over 0.95 AUC score between the reconstruction data and the original data. Also unlike PCA, it does not focus on the biggest value but indeed extract the hidden factor via our training process.}
-					\resitem{We use this technique to do anomaly detection. We compare the mean square error between the normal one and the abnormal one. And we find that multilayer perceptron performs best in this case.}
+					\resitem{Use collision event data from CERN to produce an auto-encoder to compress data. The data is 3-D tensor while the index represent the location of the energy detector and the value represent the energy.}
+					\resitem{Compare three compressors: multilayer perceptron auto-encoder, convolutional auto-encoder and PCA by calculating the reconstruction error and applying reconstrcted data in real application. The best auto-encoder is multilayer perceptron, which has over 0.92 R2 score between the reconstructed and original data.}
+					\resitem{Add threshold RELU on the last layer to make the output sparse, which increase the R2 score from 0.92 to 0.95.}
+					\resitem{Use this technique to do anomaly detection and compare the mean square error between the normal one and the abnormal one. The multilayer perceptron auto-encoder is still the best one.}
 				\end{itemize}
 			\item \ressubheading{\normalsize Duplication Detection}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{May. 2016}
 			
 			\begin{itemize}
-				\resitem{Use the data from health care system to predict possible duplication of information. The challenge is that the whole pair set is around $ 10^{11} $, which is time consuming if we build the model on it. And it is also not a balanced dataset because in ground truth we only have around 120,000 pairs.}
-				\resitem{Construct an efficient parallel method to get a smaller set of interesting pairs, which we think that they are duplication. The processing time is 10 minutes using 8 workers on CPU. After this process, we reduce the pair set from $ 10^{11} $ to $ 3700k $. Then we generate a balanced training set by randomly select same number negative pairs (pairs that are not duplication) as the positive pairs (pairs that are duplication). Then we use a feature extractor to generate feature vector for each pair. Finally use random forest to make the prediction.}
-				\resitem{The smaller set of interesting pairs includes over 95\% ground truth. And we finally get 99.4\% accuracy with our fine tunning classifier.} 
+				\resitem{Use the data from health care system to predict possible duplication of information. The whole pair set is around $ 10^{11} $ and it is not a balanced dataset including only 120,000 duplication pairs in ground-truth.}
+				\resitem{Construct an efficient parallel method to get a smaller set of candidate pair which is possibly duplicate. The amount of pair set is reduced from $ 10^{11} $ to $ 3700k $.}
+				\resitem{Generate a balanced training set by randomly selecting same number for two group -- non-duplication and duplication. Extract feature vector for each pair by our business sense. Visualize the vectors by T-SNE technology. Compare differnt binary classification model and random forest has the best performance}
+				\resitem{The smaller set of interesting pairs includes over 95\% ground truth. And finally get around 94\% accuracy with our fine tunning classifier.} 
 			\end{itemize}
 		\item \ressubheading{\normalsize Explore Relationship Between Citi bike and weather}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{May. 2016}
 		\begin{itemize}
 			\resitem{Use citi bike data and weather data in 2015 to find the relationship.}
-			\resitem{I create multiple MapReduce functions to filter or edit dimension of data. Besides only testing the relation between weather and usage, we also added the dimension such as age and gender in order to check if the results would vary for these groups.}
-			\resitem{Use data visualization technique to explore the correlation. We find that temperature has very high correlation and the usage of citi bike is various depending on time, traffic, gender and age groups.}
+			\resitem{Create MapReduce functions to filter or edit dimension of data on Hadoop platform. In addition to test the relation between weather and citibike usage, also add the dimension such as age and gender to check if the results would vary for these groups.}
+			\resitem{Use data visualization technique to explore the correlation. The collusion is that temperature has very high correlation and the usage of citi bike is various depending on time, traffic, gender and age groups.}
 		\end{itemize}
 %				\newpage
 %			\item \ressubheading{{\normalsize Effective classification of STL-10}}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{Mar. 2016}
