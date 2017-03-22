@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.11.3)  22 MAR 2017 19:19
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.11.3)  22 MAR 2017 19:27
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -304,7 +304,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 141--141
 [][][][][][][]  
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 283.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 284.
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 
@@ -312,11 +312,11 @@ File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 [1
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 283.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 284.
  (./Zihao_Wang_Resume.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 283.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 283.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 283.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 284.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 284.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 284.
  ) 
 Here is how much of TeX's memory you used:
  9137 strings out of 493638
@@ -325,6 +325,6 @@ Here is how much of TeX's memory you used:
  12502 multiletter control sequences out of 15000+600000
  8526 words of font info for 30 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 29i,7n,35p,424b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,7n,35p,395b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on Zihao_Wang_Resume.pdf (1 page).

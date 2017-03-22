@@ -167,7 +167,7 @@
 				\item \ressubheading{{\normalsize Efficient auto-encoder for physics particle collision event}}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{Oct. 2016}
 				
 				\begin{itemize}
-					\resitem{Use collision event data from CERN to produce an auto-encoder to compress data. The data is 3-D tensor while the index represent the location of the energy detector and the value represent the energy.}
+					\resitem{Use collision event data from CERN to produce an auto-encoder to compress data.}
 					\resitem{Compare three compressors: multilayer perceptron auto-encoder, convolutional auto-encoder and PCA by calculating the reconstruction error and applying reconstrcted data in real application. The best auto-encoder is multilayer perceptron, which has over 0.92 R2 score between the reconstructed and original data.}
 					\resitem{Add threshold RELU on the last layer to make the output sparse, which increase the R2 score from 0.92 to 0.95.}
 					\resitem{Use this technique to do anomaly detection and compare the mean square error between the normal one and the abnormal one. The multilayer perceptron auto-encoder is still the best one.}
@@ -175,7 +175,7 @@
 			\item \ressubheading{\normalsize Duplication Detection}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{May. 2016}
 			
 			\begin{itemize}
-				\resitem{Use the data from health care system to predict possible duplication of information. The whole pair set is around $ 10^{11} $ and it is not a balanced dataset including only 120,000 duplication pairs in ground-truth.}
+				\resitem{Use the data from health care system to predict possible duplication of information. The whole pair set is around $ 10^{11} $ including 120,000 duplication pairs in ground-truth.}
 				\resitem{Construct an efficient parallel method to get a smaller set of candidate pair which is possibly duplicate. The amount of pair set is reduced from $ 10^{11} $ to $ 3700k $.}
 				\resitem{Generate a balanced training set by randomly selecting same number for two group -- non-duplication and duplication. Extract feature vector for each pair by our business sense. Visualize the vectors by T-SNE technology. Compare differnt binary classification model and random forest has the best performance}
 				\resitem{The smaller set of interesting pairs includes over 95\% ground truth. And finally get around 94\% accuracy with our fine tunning classifier.} 
@@ -198,8 +198,9 @@
 				\item \ressubheading{{\normalsize Yelp Restaurant Rating Prediction}}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{Dec. 2015}
 				
 					\begin{itemize}
-						\resitem{Use the data from Yelp Dateset Challenge to fit different models. The challenge of this dataset is that the business attribute of the restaurant is not enough for well prediction so that combining the review as the additional feature is necessary.}
-						\resitem{Create a new model by tagging words of each review as adjective then apply Google pre-trained word2vec model which can improve the accuracy by 50\%. Also evaluate the model by using AUC of the micro-ROC curve, which is equal to the probability that the confident score of true sample is higher than the score of false sample. For our model, the AUC/probability is 0.86.}
+						\resitem{Use the data from Yelp Dateset Challenge to fit different models.}
+						\resitem{Create a new model by tagging words of each review as adjective then apply Google pre-trained word2vec model. Compare different multi-class classification algorithm and use micro-ROC (the average probability that the confident score of true sample is higher than the false sample) for evaluation.}
+						\resitem{By using word2vec model, it can improve the micro-AUC score by 50\%. Logistic Regression has best performance (0.86 micro-AUC score).}
 					\end{itemize}
 			
 
