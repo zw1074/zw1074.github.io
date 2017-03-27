@@ -6,11 +6,12 @@
 
 % GENERAL NOTE:  There may be some notes specific to myself.  If you're only interested in my LaTeX source or it doesn't make sense, please disregard it.
 
-\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,11pt]{article}
 
 
 %-----------------------------------------------------------
-\usepackage{ifsym}
+%\usepackage{marvosym}
+\usepackage{wasysym}
 \usepackage{marvosym}
 %\usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -72,10 +73,10 @@
 	\footnotesize
 	\newcommand{\mywebheader}{
 		\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
-			\textbf{\LARGE Zihao Wang} & Mail:\href{mailto:zw1074@nyu.edu}{zw1074@nyu.edu}, Website:\href{zw1074.github.io}{zw1074.github.io}\\
+			\textbf{\LARGE Zihao Wang} & \Letter~\href{mailto:zw1074@nyu.edu}{zw1074@nyu.edu} \Mundus~\href{zw1074.github.io}{zw1074.github.io}\\
 			{\footnotesize \texttt{204 10th St, Apt 314, Jersey City, New Jersey, 07302}
 			}
-			& Phone: 551-(225)-9955
+			& \phone: 551-(225)-9955
 			%& or \href{mailto:b111110046@smail.nju.edu.cn}{b111110046@smail.nju.edu.cn}
 		\end{tabular*}
 		\\
@@ -90,7 +91,7 @@
 	%	{\normalsize \textbf{New York University (CIMS)}} {\hfill New York, USA}
 	\begin{itemize}
 		\item
-		\ressubheading{{\normalsize New York University (CIMS) }}{New York, USA}{\normalsize Master of Data Science}{Sep. 2015 - Now}
+		\ressubheading{{\normalsize New York University}}{New York, USA}{\normalsize Master of Data Science}{Sep. 2015 - Now}
 		\begin{itemize}
 			\item {\bfseries Graduation day}: Jun. 2017, {\bfseries GPA:} 3.8/4.0
 			\item {\bfseries Relevant Courses}\\
@@ -129,10 +130,10 @@
 	
 	\resheading{Experience}\\
 	\begin{itemize}
-		\item \ressubheading{\normalsize Research Assistant (Deep Learning)}{AIG Inc, NYC USA}{\normalsize Science Team}{Aug. 2016 - Dec. 2016}
+		\item \ressubheading{\normalsize Research Assistant Intern (Deep Learning)}{AIG Inc, NYC USA}{\normalsize Science Team}{Aug. 2016 - Dec. 2016}
 		\begin{itemize}
 			\resitem{Contribute to the whole automatic car damage appraisal project, especially for license plate detection and heat map generation of damage part.}
-			\resitem{Help to build an end-to-end solution for accelerating license plate detection. Also implement this solution by using Theano and OpenCV library.}
+			\resitem{Build an end-to-end solution for accelerating license plate detection. Also implement this solution by using Theano and OpenCV library.}
 			\resitem{Use a novel method to generate heat map. Design some experiments to test the effect. Help to make the method be compatible with both Windows and Linux system by using Theano and Tensorflow. Also make an end-to-end toolbox for efficiently using this method.}
 			%		\resitem{Currently modifying the class activation mapping model, try to get the attend from location instead of getting the activation from different feature maps. Current the accuracy of model in Front Bumper is 96\%.}
 		\end{itemize}
@@ -172,12 +173,12 @@
 					\resitem{Add threshold RELU on the last layer to make the output sparse, which increase the R2 score from 0.92 to 0.95.}
 					\resitem{Use this technique to do anomaly detection and compare the mean square error between the normal one and the abnormal one. The multilayer perceptron auto-encoder is still the best one.}
 				\end{itemize}
-			\item \ressubheading{\normalsize Duplication Detection}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{May. 2016}
+			\item \ressubheading{\normalsize Duplication Detection}{New York University, USA}{\normalsize Individual: response for designing and implement}{May. 2016}
 			
 			\begin{itemize}
 				\resitem{Use the data from health care system to predict possible duplication of information. The whole pair set is around $ 10^{11} $ including 120,000 duplication pairs in ground-truth.}
 				\resitem{Construct an efficient parallel method to get a smaller set of candidate pair which is possibly duplicate. The amount of pair set is reduced from $ 10^{11} $ to $ 3700k $.}
-				\resitem{Generate a balanced training set by randomly selecting same number for two group -- non-duplication and duplication. Extract feature vector for each pair by our business sense. Visualize the vectors by T-SNE technology. Compare differnt binary classification model and random forest has the best performance}
+				\resitem{Generate a balanced training set by randomly selecting same number for two group. Extract feature vector for each pair by our business sense. Visualize the vectors by T-SNE technology. Compare different binary classification model. Random forest has the best performance}
 				\resitem{The smaller set of interesting pairs includes over 95\% ground truth. And finally get around 94\% accuracy with our fine tunning classifier.} 
 			\end{itemize}
 		\item \ressubheading{\normalsize Explore Relationship Between Citi bike and weather}{New York University, USA}{\normalsize Teamwork: response for designing and implement}{May. 2016}
