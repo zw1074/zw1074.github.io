@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Amazon Lex for JavazScript - Sample Application (FlowerOrder)</title>
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.147.0.min.js"></script> <!-- Load the latest aws js -->
+        <style language="text/css">
+            input#wisdom {
+                padding: 4px;
+                font-size: 1em;
+                width: 400px
+            }
+
+            input#phoneNum {
+                padding: 4px;
+                font-size: 1em;
+                width: 400px
+            }
+
+            input::placeholder {
+                color: #ccc;
+                font-style: italic;
+            }
+
+            
+
+            p.userRequest {
+                margin: 4px;
+                padding: 4px 10px 4px 10px;
+                border-radius: 4px;
+                min-width: 50%;
+                max-width: 85%;
+                float: left;
+                background-color: #7d7;
+            }
+
+            p.lexResponse {
+                margin: 4px;
+                padding: 4px 10px 4px 10px;
+                border-radius: 4px;
+                text-align: right;
+                min-width: 50%;
+                max-width: 85%;
+                float: right;
+                background-color: #bbf;
+                font-style: italic;
+            }
+
+            p.lexError {
+                margin: 4px;
+                padding: 4px 10px 4px 10px;
+                border-radius: 4px;
+                text-align: right;
+                min-width: 50%;
+                max-width: 85%;
+                float: right;
+                background-color: #f77;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 style="text-align: center">Amazon Lex - National Grid Chatbot</h1>
+        <p style="width: 2000px">
+            This is a web integration for national grid chatbot. This html page is created by Zihao Wang. 
+            To give any feedback for this page, please reach out my email: <a href="mailto:Zihao.Wang@nationalgrid.com" style="color:blue">Zihao.Wang@nationalgrid.com</a>
+        </p>
+        <p style="width: 1000px">
+            Please provide your phone number and click the button to start: (with area code: e.g. +1 (551)225-9955)
+        </p>
+        <form id="phoneform" style="margin-top: 10px" onsubmit="return getphonenum();">
+            <input type="text" id="phoneNum" size="80" value="" placeholder="+1 (551)225-9955">
+        </form>
+        <p>
+            <input id="clickMe" type="button" value="Submit phone number" onclick="return getphonenum();" />
+        </p>
+        <p>
+            Conversation windows
+        </p>
+        <div id="conversation" style="width: 400px; height: 400px; border: 1px solid #ccc; background-color: #eee; padding: 4px; overflow: scroll"></div>
+        <form id="chatform" style="margin-top: 10px" onsubmit="return pushChat();">
+            <input type="text" id="wisdom" size="80" value="" placeholder="I want to pay my bill">
+            <input id="clickMe2" type="button" value="Submit" onclick="return pushChat();" />
+        </form>
+        <script type="text/javascript">
+            // set the focus to the input box
+            document.getElementById("wisdom").focus();
+
+            // Initialize the Amazon Cognito credentials provider
+            AWS.config.region = 'us-east-1'; // Region
+            AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+            // Provide your Pool Id here
+                IdentityPoolId: 'us-east-1:359f0855-e397-4f7d-b06c-73b25e3f3a6d',
+            });
+
+            var lexruntime = new AWS.LexRuntime();
+            var lexUserId = 'chatbot-demo' + Date.now();
+            var sessionAttributes = {};
+            var dialogstatus = {};
+            function getphonenum() {
+                var phonenumText = document.getElementById('phoneNum');
+                if (phonenumText && phonenumText.value && phonenumText.value.trim().length > 0){
+                    sessionAttributes = {
+                        phone_num: phonenumText.value.trim()
+                    };
+                    dialogstatus = {};
+                    clearconversation();
+                    lexUserId = 'chatbot-demo' + Date.now();
+                    showResponse({message: 'Thank you for calling National Grid! Would you like to pay your bill?'});
+                }
+                return false;
+            }
+
+            function pushChat() {
+
+                // if there is text to be sent...
+                var wisdomText = document.getElementById('wisdom');
+                if (wisdomText && wisdomText.value && wisdomText.value.trim().length > 0) {
+                    
+                    // disable input to show we're sending it
+                    var wisdom = wisdomText.value.trim();
+                    wisdomText.value = '...';
+                    wisdomText.locaked = true;
+
+                    // decide which bot should be sent and then send it to the Lex runtime
+                    if (!('Next' in sessionAttributes)) {
+                        var params = {
+                            botAlias: 'latest',
+                            botName: 'WelcomeBot',
+                            inputText: wisdom,
+                            userId: lexUserId,
+                            sessionAttributes: sessionAttributes
+                        };
+                    }
+                    else {
+                        if (sessionAttributes.Next === 'Authentic') {
+                            var params = {
+                                botAlias: 'latest',
+                                botName: 'AuthenticBot',
+                                inputText: wisdom,
+                                userId: lexUserId,
+                                sessionAttributes: sessionAttributes
+                            };       
+                        }
+                        else if (sessionAttributes.Next === 'PayBill') {
+                            var params = {
+                                botAlias: 'latest',
+                                botName: 'PayBillBot',
+                                inputText: wisdom,
+                                userId: lexUserId,
+                                sessionAttributes: sessionAttributes
+                            }
+                        }
+                    }
+                    
+                    showRequest(wisdom);
+                    lexruntime.postText(params, function(err, data) {
+                        if (err) {
+                            console.log(err, err.stack);
+                            showError('Error: ' + err.message + ' (see console for detail)')
+                        }
+                        if (data) {
+                            // capture the sessionAttributes for the next cycle
+                            sessionAttributes = data.sessionAttributes;
+                            //show response and/or error/dialog status
+                            
+                            showResponse(data);
+                            if (!('previous' in dialogstatus) && ('Next') in sessionAttributes) {
+                                dialogstatus.previous = sessionAttributes.Next;
+                                if (sessionAttributes.Next === 'Authentic') {
+                                    showResponse({message: 'Please provide your National Grid account number. Your account number is located at the top of your bill to the right of your address.'});
+                                }
+                                else if (sessionAttributes.Next === 'PayBill') {
+                                    showResponse({message: 'Your account has been successfully verified. Your current balance is $' + sessionAttributes.balance + ', and your next payment is due on ' + sessionAttributes.due_date + '. Do you have your billing information on hand?'});
+                                    sessionAttributes.order = '0';
+                                }
+                            }
+                            else if (('previous' in dialogstatus) && ('Next' in sessionAttributes) && dialogstatus.previous != sessionAttributes.Next) {
+                                dialogstatus.previous = sessionAttributes.Next;
+                                if (sessionAttributes.Next === 'Authentic') {
+                                    showResponse({message: 'Please provide your National Grid account number. Your account number is located at the top of your bill to the right of your address.'});
+                                }
+                                else if (sessionAttributes.Next === 'PayBill') {
+                                    showResponse({message: 'Your account has been successfully verified. Your current balance is $' + sessionAttributes.balance + ', and your next payment is due on ' + sessionAttributes.due_date + '. Do you have your billing information on hand?'});
+                                    sessionAttributes.order = '0';
+                                }
+                            }
+                        }
+                        // re-enable input
+                        wisdomText.value = '';
+                        wisdomText.locaked = false;
+                    });
+                }
+                // we always cancel form submission
+                return false;
+            }
+            
+            function clearconversation() {
+                var conversationDiv = document.getElementById('conversation');
+                conversationDiv.innerText = '';
+            }
+
+            function showRequest(daText) {
+                
+                var conversationDiv = document.getElementById('conversation');
+                var requestPara = document.createElement("P");
+                requestPara.className = 'userRequest';
+                requestPara.appendChild(document.createTextNode(daText));
+                conversationDiv.appendChild(requestPara);
+                conversationDiv.scrollTop = conversationDiv.scrollHeight;
+            }
+
+            function showError(daText) {
+                
+                var conversationDiv = document.getElementById('conversation');
+                var errorPara =  document.createElement("P");
+                errorPara.className = 'lexError';
+                errorPara.appendChild(document.createTextNode(daText));
+                conversationDiv.appendChild(errorPara);
+                conversationDiv.scrollTop = conversationDiv.scrollHeight;
+            }
+
+            function showResponse(lexResponse) {
+                
+                var conversationDiv = document.getElementById('conversation');
+                var responsePara = document.createElement("P");
+                responsePara.className = 'lexResponse';
+                if (lexResponse.message) {
+                    responsePara.appendChild(document.createTextNode(lexResponse.message));
+                    responsePara.appendChild(document.createElement('br'));
+                }
+                // if (lexResponse.dialogState === 'ReadyForFulfillment') {
+                //     responsePara.appendChild(document.createTextNode('Ready for fulfillment'));
+                // } else {
+                //     responsePara.appendChild(document.createTextNode(
+                //         '(' + lexResponse.dialogState + ')'
+                //     ));
+                // }
+                conversationDiv.appendChild(responsePara);
+                conversationDiv.scrollTop = conversationDiv.scrollHeight;
+            }
+        </script>
+    </body>
+</html>
